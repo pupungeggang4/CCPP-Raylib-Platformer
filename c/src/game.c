@@ -4,21 +4,26 @@
 #include "scene.h"
 
 void gameInit(GameVar* gameVar) {
-    SetConfigFlags(FLAG_WINDOW_HIGHDPI);
+    float aspRatio = 0.75;
     SetConfigFlags(FLAG_VSYNC_HINT);
-    InitWindow(800, 600, "Platformer");
-    Vector2 DPIScale = GetWindowScaleDPI();
-    int width = (int)(800 * DPIScale.x);
-    int height = (int)(600 * DPIScale.y);
+    int width = 800, height = 600;
+    InitWindow(width, height, "Puzzle Game");
+    int mWidth = GetMonitorWidth(0); int mHeight = GetMonitorHeight(0);
+    if (mWidth * aspRatio > height) {
+        height = (int)(mHeight * 0.8); width = (int)(height / aspRatio);
+    } else {
+        width = (int)(mWidth * 0.8); height = (int)(width * aspRatio);
+    }
     SetWindowSize(width, height);
+    SetWindowPosition((mWidth - width) / 2, (mHeight - height) / 2);
+    Camera2D tempCamera; gameVar->camera = tempCamera;
 
-    SetExitKey(KEY_GRAVE);
-    
     assetLoad(&asset);
     gameVar->running = 1;
 }
 
 void gameLoop(GameVar* gameVar) {
+    gameVar->camera.zoom = GetRenderWidth() / 800.0f;
     gameVar->delta = GetFrameTime();
 
     gameInputHandle(gameVar);
@@ -33,6 +38,7 @@ void gameLoop(GameVar* gameVar) {
 
     BeginDrawing();
     ClearBackground(RAYWHITE);
+    BeginMode2D(gameVar->camera);
     if (gameVar->scene == TITLE) {
         sceneTitleRender(gameVar);
     } else if (gameVar->scene == EDIT) {
@@ -40,6 +46,7 @@ void gameLoop(GameVar* gameVar) {
     } else if (gameVar->scene == RUN) {
         sceneRunRender(gameVar);
     }
+    EndMode2D();
     EndDrawing();
     if (WindowShouldClose()) gameVar->running = 0;
 }
@@ -47,6 +54,7 @@ void gameLoop(GameVar* gameVar) {
 void gameInputHandle(GameVar* gameVar) {
     if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT)) {
         Vector2 pos = GetMousePosition();
+        pos = Vector2Scale(pos, 1 / gameVar->camera.zoom);
         printf("%f, %f\n", pos.x, pos.y);
         if (gameVar->scene == TITLE) {
             sceneTitleMouseUp(gameVar, pos, LEFT);
