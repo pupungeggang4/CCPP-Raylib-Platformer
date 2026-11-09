@@ -50,6 +50,14 @@ void gameLoop(GameVar* gameVar) {
     }
     EndMode2D();
     EndDrawing();
+
+    if (gameVar->sceneChange != -1) {
+        gameVar->scene = gameVar->sceneChange;
+        if (gameVar->scene == TITLE) sceneTitleReady(gameVar);
+        else if (gameVar->scene == EDIT) sceneEditReady(gameVar);
+        else if (gameVar->scene == RUN) sceneRunReady(gameVar); 
+        gameVar->sceneChange = -1;
+    }
     if (WindowShouldClose()) gameVar->running = 0;
 }
 

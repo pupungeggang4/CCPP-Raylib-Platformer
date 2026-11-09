@@ -1,9 +1,13 @@
 #include "render.h"
 
-void renderDrawText(const char* text, const float pos[2], int size, Color color) {
-    DrawText(text, (int)pos[0], (int)pos[1], size, color);
+void drawText(const char* text, const int pos[4], int size, Color color) {
+    DrawText(text, pos[0], pos[1], size, color);
 }
 
-void renderDrawRect(const float rect[4], Color color) {
-    DrawRectangle((int)rect[0], (int)rect[1], (int)rect[2], (int)rect[3], color);
+void drawRect(const int rect[4], Color color) {
+    DrawRectangle(rect[0], rect[1], rect[2], rect[3], color);
+}
+
+void drawTexture(Texture2D texture, const int pos[4]) {
+    DrawTexture(texture, pos[0], pos[1], WHITE);
 }

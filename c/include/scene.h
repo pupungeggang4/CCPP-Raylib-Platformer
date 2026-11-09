@@ -3,8 +3,6 @@
 
 #include "includes.h"
 
-void sceneChange(GameVar*, int);
-
 void sceneTitleReady(GameVar*);
 void sceneTitleUpdate(GameVar*);
 void sceneTitleRender(GameVar*);

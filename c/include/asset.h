@@ -3,7 +3,7 @@
 
 #include "includes.h"
 
-enum Icon {I_PLAY, I_PAUSE, I_STOP};
+enum Icon {I_MENU, I_UI, I_PLAY, I_PAUSE, I_STOP};
 
 struct Asset {
     Texture2D texture[100];

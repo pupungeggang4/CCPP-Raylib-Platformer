@@ -7,3 +7,10 @@ UITitle uiTitle = {
     {160, 240, 480, 80}, // buttonQuit
     {180, 260} // textQuit
 };
+
+UIEdit uiEdit = {
+    {20, 20}, // textTitle
+    {740, 20, 40, 40}, // buttonMenu
+    {20, 540, 40, 40}, // buttonUIToggle
+    {740, 540, 40, 40}, // buttonExit
+};

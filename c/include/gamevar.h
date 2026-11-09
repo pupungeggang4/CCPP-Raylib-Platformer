@@ -10,8 +10,11 @@ struct GameVar {
 
     // Game system
     int scene;
-    int state;
+    int state; int sceneChange;
     float delta;
+
+    // Editor
+    int uiVisible;
 };
 
 extern GameVar gameVar;

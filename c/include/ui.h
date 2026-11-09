@@ -4,12 +4,26 @@
 #include "includes.h"
 
 struct UITitle {
-    float textTitle[2];
-    float buttonEdit[4];
-    float textEdit[2];
-    float buttonQuit[4];
-    float textQuit[2];
+    int textTitle[4];
+    int buttonEdit[4];
+    int textEdit[4];
+    int buttonQuit[4];
+    int textQuit[4];
 };
 
-extern struct UITitle uiTitle;
+struct UIEdit {
+    int textTitle[4];
+    int buttonMenu[4];
+    int buttonUIToggle[4];
+    int buttonRun[4];
+};
+
+struct UIRun {
+
+};
+
+extern UITitle uiTitle;
+extern UIEdit uiEdit;
+extern UIRun uiRun;
+
 #endif
