@@ -14,3 +14,9 @@ UIEdit uiEdit = {
     {20, 540, 40, 40}, // buttonUIToggle
     {740, 540, 40, 40}, // buttonExit
 };
+
+UIRun uiRun = {
+    {340, 20, 40, 40}, // buttonPlay
+    {380, 20, 40, 40}, // buttonPause
+    {420, 20, 40, 40}, // buttonStop
+};

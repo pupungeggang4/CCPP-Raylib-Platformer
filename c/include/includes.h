@@ -11,7 +11,7 @@
 
 enum SceneName {TITLE, EDIT, RUN};
 enum Direction {LEFT, RIGHT, UP, DOWN};
-enum State {NORMAL, INPUT, ERASE};
+enum State {NORMAL, INPUT, ERASE, PAUSE};
 
 typedef struct Asset Asset;
 typedef struct UITitle UITitle;

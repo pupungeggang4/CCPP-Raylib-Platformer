@@ -19,7 +19,9 @@ struct UIEdit {
 };
 
 struct UIRun {
-
+    int buttonPlay[4];
+    int buttonPause[4];
+    int buttonStop[4];
 };
 
 extern UITitle uiTitle;

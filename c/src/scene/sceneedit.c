@@ -7,6 +7,7 @@
 
 void sceneEditReady(GameVar* gameVar) {
     gameVar->uiVisible = 1;
+    gameVar->state = NORMAL;
 }
 
 void sceneEditUpdate(GameVar* gameVar) {
@@ -24,8 +25,15 @@ void sceneEditKeyDown(GameVar* gameVar) {
 }
 
 void sceneEditMouseUp(GameVar* gameVar, Vector2 pos, int button) {
-    if (utilPointInsideRectUI(pos, uiEdit.buttonUIToggle)) {
-        gameVar->uiVisible = 1 - gameVar->uiVisible;
+    if (button == LEFT) {
+        if (utilPointInsideRectUI(pos, uiEdit.buttonUIToggle)) {
+            gameVar->uiVisible = 1 - gameVar->uiVisible;
+        }
+        if (gameVar->uiVisible) {
+            if (utilPointInsideRectUI(pos, uiEdit.buttonRun)) {
+                gameVar->sceneChange = RUN;
+            }
+        }
     }
 }
 
