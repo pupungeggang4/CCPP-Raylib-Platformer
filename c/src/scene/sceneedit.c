@@ -14,11 +14,13 @@ void sceneEditUpdate(GameVar* gameVar) {
 }
 
 void sceneEditRender(GameVar* gameVar) {
-    drawTexture(asset.texture[I_MENU], uiEdit.buttonMenu);
+    drawGrid();
+
     drawTexture(asset.texture[I_UI], uiEdit.buttonUIToggle);
     if (gameVar->uiVisible == 1) {
         drawTexture(asset.texture[I_PLAY], uiEdit.buttonRun);
     }
+    drawTexture(asset.texture[I_MENU], uiEdit.buttonMenu);
 }
 
 void sceneEditKeyDown(GameVar* gameVar) {

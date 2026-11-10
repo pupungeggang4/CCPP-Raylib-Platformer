@@ -15,6 +15,7 @@ struct GameVar {
 
     // Editor
     int uiVisible;
+
 };
 
 extern GameVar gameVar;
