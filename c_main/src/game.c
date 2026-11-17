@@ -26,6 +26,10 @@ void gameLoop(GameVar* gameVar) {
     gameInputHandle(gameVar);
 
     BeginDrawing();
+    ClearBackground(RAYWHITE);
+    BeginMode2D(gameVar->camera);
+    if (gameVar->scene == S_TITLE) 1;
+    EndMode2D();
     EndDrawing();
 
     if (WindowShouldClose()) gameVar->running = FALSE;
