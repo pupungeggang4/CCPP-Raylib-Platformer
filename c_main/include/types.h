@@ -8,6 +8,9 @@ enum GameState {G_NORMAL};
 typedef struct UITitle UITitle;
 typedef struct UIField UIField;
 typedef struct UIMenu UIMenu;
+typedef struct SceneTitleVar SceneTitleVar;
+typedef struct SceneFieldVar SceneFieldVar;
+typedef struct SceneMenuVar SceneMenuVar;
 typedef struct GameVar GameVar;
 
 extern UITitle uiTitle;

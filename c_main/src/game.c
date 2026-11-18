@@ -1,5 +1,6 @@
 #include "gamevar.h"
 #include "game.h"
+#include "scene.h"
 
 void gameInit(GameVar* gameVar) {
     float aspRatio = 0.75;
@@ -15,28 +16,37 @@ void gameInit(GameVar* gameVar) {
     }
     SetWindowSize(width, height);
     SetWindowPosition((mWidth - width) / 2, (mHeight - height) / 2);
+    SetExitKey(KEY_NULL);
     #endif
     Camera2D tempCamera = {0}; gameVar->camera = tempCamera;
+
+    gameVar->scene = S_TITLE;
 }
 
 void gameLoop(GameVar* gameVar) {
-    gameVar->camera.zoom = GetRenderWidth() / 800.0f;
+    gameVar->camera.zoom = (float)GetRenderWidth() / 800.0f;
     gameVar->dt = GetFrameTime();
 
     gameInputHandle(gameVar);
-
+    sceneUpdates[gameVar->scene](gameVar);
     BeginDrawing();
     ClearBackground(RAYWHITE);
     BeginMode2D(gameVar->camera);
-    if (gameVar->scene == S_TITLE) 1;
+    sceneRenders[gameVar->scene](gameVar);
     EndMode2D();
     EndDrawing();
+
+    if (gameVar->sceneNext != -1) {
+        gameVar->scene = gameVar->sceneNext;
+        sceneReadys[gameVar->scene](gameVar);
+        gameVar->sceneNext = -1;
+    }
 
     if (WindowShouldClose()) gameVar->running = FALSE;
 }
 
 void gameInputHandle(GameVar* gameVar) {
-
+    sceneKeyDowns[gameVar->scene](gameVar);
 }
 
 void gameQuit() {
