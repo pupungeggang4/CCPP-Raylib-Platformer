@@ -8,3 +8,18 @@ UITitle uiTitle = {
     {160, 240, 480, 80}, // buttonQuit
     {180, 260}, // textQuit
 };
+
+UIField uiField = {
+    {740, 20, 40, 40}, // buttonMenu
+};
+
+UIMenu uiMenu = {
+    {160, 140, 480, 320}, // rect
+    {180, 160}, // textPaused
+    {160, 220, 480, 80}, // buttonResume
+    {180, 240}, // textResume
+    {160, 300, 480, 80}, // buttonExit
+    {180, 320}, // textExit
+    {160, 380, 480, 80}, // buttonQuit
+    {180, 400} // textQuit
+};

@@ -5,6 +5,6 @@
 
 void drawRect(Rectangle, Color);
 void drawText(const char*, Vector2, int, Color);
-void drawTexture(Texture2D, Vector2);
+void drawTexture(Texture2D, Rectangle);
 
 #endif
