@@ -17,7 +17,7 @@ void sceneFieldUpdate(GameVar* gameVar) {
 void sceneFieldRender(GameVar* gameVar) {
     SceneFieldVar* sceneVar = &gameVar->sceneFieldVar;
 
-    drawTexture(asset.texture[T_MENU], uiField.buttonMenu);
+    drawTexture(asset.texture[T_MENU], ui.uiField.buttonMenu);
 
     if (gameVar->menu) {
         sceneMenuRender(gameVar);

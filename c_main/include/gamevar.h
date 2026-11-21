@@ -13,6 +13,10 @@ struct SceneFieldVar {
     int place;
 };
 
+struct SceneFileVar {
+    int selected;
+};
+
 struct SceneMenuVar {
     int selected;
 };
@@ -24,6 +28,7 @@ struct GameVar {
     Camera2D camera;
 
     SceneTitleVar sceneTitleVar;
+    SceneFileVar sceneFileVar;
     SceneFieldVar sceneFieldVar;
     SceneMenuVar sceneMenuVar;
 

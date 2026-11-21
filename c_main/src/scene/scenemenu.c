@@ -17,14 +17,14 @@ void sceneMenuUpdate(GameVar* gameVar) {
 
 void sceneMenuRender(GameVar* gameVar) {
     SceneMenuVar* sceneVar = &gameVar->sceneMenuVar;
-    drawRect(uiMenu.rect, YELLOW);
-    if (sceneVar->selected == 0) drawRect(uiMenu.buttonResume, PINK);
-    else if (sceneVar->selected == 1) drawRect(uiMenu.buttonExit, PINK);
-    else if (sceneVar->selected == 2) drawRect(uiMenu.buttonQuit, PINK);
-    drawText("Paused", uiMenu.textPaused, 20, BLACK);
-    drawText("Resume", uiMenu.textResume, 20, BLACK);
-    drawText("Exit to Title", uiMenu.textExit, 20, BLACK);
-    drawText("Quit Game", uiMenu.textQuit, 20, BLACK);
+    drawRect(ui.uiMenu.rect, YELLOW);
+    if (sceneVar->selected == 0) drawRect(ui.uiMenu.buttonResume, PINK);
+    else if (sceneVar->selected == 1) drawRect(ui.uiMenu.buttonExit, PINK);
+    else if (sceneVar->selected == 2) drawRect(ui.uiMenu.buttonQuit, PINK);
+    drawText("Paused", ui.uiMenu.textPaused, 20, BLACK);
+    drawText("Resume", ui.uiMenu.textResume, 20, BLACK);
+    drawText("Exit to Title", ui.uiMenu.textExit, 20, BLACK);
+    drawText("Quit Game", ui.uiMenu.textQuit, 20, BLACK);
 }
 
 void sceneMenuKeyDown(GameVar* gameVar) {

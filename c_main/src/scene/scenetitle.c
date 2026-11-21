@@ -15,13 +15,13 @@ void sceneTitleUpdate(GameVar* gameVar) {
 
 void sceneTitleRender(GameVar* gameVar) {
     SceneTitleVar* sceneVar = &gameVar->sceneTitleVar;
-    drawText("Planterguy's Adventure", uiTitle.textTitle, 20, BLACK);
-    drawRect(uiTitle.buttonStart, YELLOW);
-    drawRect(uiTitle.buttonQuit, YELLOW);
-    if (sceneVar->selected == 0) drawRect(uiTitle.buttonStart, PINK);
-    else if (sceneVar->selected == 1) drawRect(uiTitle.buttonQuit, PINK);
-    drawText("Start Game", uiTitle.textStart, 20, BLACK);
-    drawText("Quit Game", uiTitle.textQuit, 20, BLACK);
+    drawText("Planterguy's Adventure", ui.uiTitle.textTitle, 20, BLACK);
+    drawRect(ui.uiTitle.buttonStart, YELLOW);
+    drawRect(ui.uiTitle.buttonQuit, YELLOW);
+    if (sceneVar->selected == 0) drawRect(ui.uiTitle.buttonStart, PINK);
+    else if (sceneVar->selected == 1) drawRect(ui.uiTitle.buttonQuit, PINK);
+    drawText("Start Game", ui.uiTitle.textStart, 20, BLACK);
+    drawText("Quit Game", ui.uiTitle.textQuit, 20, BLACK);
 }
 
 void sceneTitleKeyDown(GameVar* gameVar) {
