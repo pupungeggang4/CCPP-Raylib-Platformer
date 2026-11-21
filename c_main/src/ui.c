@@ -9,6 +9,10 @@ UITitle uiTitle = {
     {180, 260}, // textQuit
 };
 
+UIFile uiFile = {
+    {20, 20} // textTitle
+};
+
 UIField uiField = {
     {740, 20, 40, 40}, // buttonMenu
 };

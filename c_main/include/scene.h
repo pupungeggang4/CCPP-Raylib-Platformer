@@ -9,6 +9,11 @@ void sceneTitleUpdate(GameVar*);
 void sceneTitleRender(GameVar*);
 void sceneTitleKeyDown(GameVar*);
 
+void sceneFileReady(GameVar*);
+void sceneFileUpdate(GameVar*);
+void sceneFileRender(GameVar*);
+void sceneFileKeyDown(GameVar*);
+
 void sceneFieldReady(GameVar*);
 void sceneFieldUpdate(GameVar*);
 void sceneFieldRender(GameVar*);

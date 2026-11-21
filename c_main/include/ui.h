@@ -11,6 +11,10 @@ struct UITitle {
     Vector2 textQuit;
 };
 
+struct UIFile {
+    Vector2 textTitle;
+};
+
 struct UIField {
     Rectangle buttonMenu;
 };

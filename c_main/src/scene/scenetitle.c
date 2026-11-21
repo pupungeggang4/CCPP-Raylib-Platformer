@@ -29,7 +29,7 @@ void sceneTitleKeyDown(GameVar* gameVar) {
     if (IsKeyPressed(KEY_W) || IsKeyPressed(KEY_UP)) sceneVar->selected = (sceneVar->selected + 1) % 2;
     else if (IsKeyPressed(KEY_S) || IsKeyPressed(KEY_DOWN)) sceneVar->selected = (sceneVar->selected + 1) % 2;
     else if (IsKeyPressed(KEY_ENTER)) {
-        if (sceneVar->selected == 0) gameVar->sceneNext = S_FIELD;
+        if (sceneVar->selected == 0) gameVar->sceneNext = S_FILE;
         else if (sceneVar->selected == 1) gameVar->running = FALSE;
     }
 }
